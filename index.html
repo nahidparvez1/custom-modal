@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GeoIP Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/geoip-js@1.1.1/dist/geoip.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <!-- for BANGLADESH  -->
+
+  <div class="modal fade" id="modal-bangladesh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <a href="/sharedfarm/#farms">
+                <div class="modal-body img-fluid" style="background-image: url('{% static 'img/gallary/campaigns/eid_campaign_2023_bd.png'%}');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+                        <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md">INVEST NOW</button>
+                        
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+ <!-- for MALAYSIA  -->
+
+ <div class="modal fade" id="modal-malaysia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <a href="/sharedfarm/#farms">
+                <div class="modal-body img-fluid" style="background-image: url('{% static 'img/gallary/campaigns/eid_campaign_2023_malaysia.jpg'%}');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+                        <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md">INVEST NOW</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+  
+  <script>
+    $(function(){
+        var countryCode = geoip.country();
+
+        if (countryCode === 'BD') {
+            $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
+        } else {
+            $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
+        }
+    });
+</script>
+
+</body>
+</html>
