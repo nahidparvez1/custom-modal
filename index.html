@@ -65,6 +65,8 @@
         });
     </script> -->
 
+
+
     <script>
         // Get the user's GeoIP
         $.getJSON('https://ipinfo.io', function(data) {
@@ -72,7 +74,7 @@
           // Check the user's country code and show the corresponding modal
           if (countryCode === "BD") {
             $('#modal-bangladesh').modal('show');
-          } else if (countryCode === "MY") {
+          } else {
             $('#modal-malaysia').modal('show');
           }
         });
