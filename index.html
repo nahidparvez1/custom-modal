@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         $(function(){
             var countryCode = geoip.country();
 
@@ -63,7 +63,21 @@
                 $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
             }
         });
-    </script>
+    </script> -->
+
+    <script>
+        // Get the user's GeoIP
+        $.getJSON('https://ipinfo.io', function(data) {
+          var countryCode = data.country;
+          // Check the user's country code and show the corresponding modal
+          if (countryCode === "BD") {
+            $('#modal-bangladesh').modal('show');
+          } else if (countryCode === "MY") {
+            $('#modal-malaysia').modal('show');
+          }
+        });
+      </script>
+      
 
 </body>
 </html>
