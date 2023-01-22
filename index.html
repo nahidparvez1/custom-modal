@@ -9,59 +9,59 @@
 </head>
 <body>
 
-  <!-- for BANGLADESH  -->
+    <h1>PraniSheba Jouthokhamar</h1>
 
-  <div class="modal fade" id="modal-bangladesh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <a href="/sharedfarm/#farms">
-                <div class="modal-body img-fluid" style="background-image: url('{% static 'img/gallary/campaigns/eid_campaign_2023_bd.png'%}');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
-                        <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md">INVEST NOW</button>
-                        
+        <!-- for BANGLADESH  -->
 
+     <div class="modal fade" id="modal-bangladesh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <a href="/sharedfarm/#farms">
+                    <div class="modal-body img-fluid" style="background-image: url('img/eid_campaign_2023_bd.png');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+                            <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md">INVEST NOW</button>
+                            
+
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
- <!-- for MALAYSIA  -->
+    <!-- for MALAYSIA  -->
 
- <div class="modal fade" id="modal-malaysia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <a href="/sharedfarm/#farms">
-                <div class="modal-body img-fluid" style="background-image: url('{% static 'img/gallary/campaigns/eid_campaign_2023_malaysia.jpg'%}');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
-                        <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md">INVEST NOW</button>
+    <div class="modal fade" id="modal-malaysia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <a href="/sharedfarm/#farms">
+                    <div class="modal-body img-fluid" style="background-image: url('img/eid_campaign_2023_malaysia.jpg');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+                            <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md">INVEST NOW</button>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
+    <script>
+        $(function(){
+            var countryCode = geoip.country();
 
-  
-  <script>
-    $(function(){
-        var countryCode = geoip.country();
-
-        if (countryCode === 'BD') {
-            $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
-        } else {
-            $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
-        }
-    });
-</script>
+            if (countryCode === 'BD') {
+                $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
+            } else {
+                $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
+            }
+        });
+    </script>
 
 </body>
 </html>
