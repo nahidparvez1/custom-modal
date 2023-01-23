@@ -73,12 +73,24 @@
           var countryCode = data.country;
           // Check the user's country code and show the corresponding modal
           if (countryCode === "BD") {
-            $('#modal-bangladesh').modal('show');
+            $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
           } else {
-            $('#modal-malaysia').modal('show');
+            $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
           }
         });
     </script>
+
+    <!-- <script>
+        $(function(){
+            var countryCode = geoip.country();
+    
+            if (countryCode === 'BD') {
+                $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
+            } else {
+                $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
+            }
+        });
+    </script> --> -->
       
 
 </body>
