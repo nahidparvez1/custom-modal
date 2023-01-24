@@ -11,18 +11,28 @@
 
   <!-- <style>
 
-
-    .invisible {
+    .invest-btn{
         display: none;
     }
-    
-    .fade-hover:hover .invisible {
-        display: block;
-        background-color: lightblue;
-    }
+
+   .fade-hover:hover .invest-btn {
+    display: block;
+   }
 
       
   </style> -->
+
+  <style>
+    .invest-btn{
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+    }
+    
+    .invest-btn.show{
+        opacity: 1;
+    }
+    
+  </style>
 
 </head>
 <body>
@@ -40,7 +50,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
-                            <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md invisible">INVEST NOW</button>
+                            <button style="box-shadow: 0px 0px 5px white;" class="invest-btn btn-primary btn-md ht-btn-md">INVEST NOW</button>
                         </div>
                     </div>
                 </a>
@@ -59,7 +69,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <div class="text-center p-4" style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
-                            <button style="box-shadow: 0px 0px 5px white;" class="btn ht-btn-md invisible">INVEST NOW</button>
+                            <button style="box-shadow: 0px 0px 5px white;" class=" invest-btn btn-primary btn-md ht-btn-md">INVEST NOW</button>
                         </div>
                     </div>
                 </a>
@@ -81,7 +91,7 @@
 
 
 
-    <script>
+    <!-- <script>
         // Get the user's GeoIP
         $.getJSON('https://ipinfo.io', function(data) {
           var countryCode = data.country;
@@ -92,21 +102,21 @@
             $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
           }
         });
-    </script>
+    </script> -->
 
     <script>
-        $(document).ready(function() {
-            $('.modal-body').hover(function() {
-                $('.invisible').show();
-            }, function() {
-                $('.invisible').hide();
-            });
-    
-            $('.close').on('click',function(){
-                $('.invisible').hide();
-            });
-        });
+        // Get the user's GeoIP
+        
+          var countryCode = 'BD';
+          // Check the user's country code and show the corresponding modal
+          if (countryCode === 'BD') {
+            $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
+          } else {
+            $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
+          }
+
     </script>
+    
     
 
     <!-- <script>
@@ -119,7 +129,18 @@
                 $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
             }
         });
-    </script> --> -->
+    </script> -->
+
+    <script>
+        $(document).ready(function() {
+            $('.modal-body').hover(function() {
+                $('.invest-btn').addClass("show");
+            }, function() {
+                $('.invest-btn').removeClass("show");
+            });
+        });
+    </script>
+    
       
 
 </body>
