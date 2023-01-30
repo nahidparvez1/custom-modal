@@ -185,14 +185,16 @@
     <script>
         // Get the user's GeoIP
         $.getJSON('https://api.ipwhois.io/v1/ip', function(data) {
-          var countryCode = data.data.country_code;
-          // Check the user's country code and show the corresponding modal
-          if (countryCode === "BD") {
-            $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
-          } else {
-            $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
-          }
-        });
+            console.log(data);
+            var countryCode = data.data.country_code;
+            // Check the user's country code and show the corresponding modal
+            if (countryCode === "BD") {
+              $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
+            } else {
+              $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
+            }
+          });
+          
     </script>
 
     <!-- ip tracer by ipwhois ends -->
