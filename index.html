@@ -166,11 +166,14 @@
     
     <script>
         $(function(){
+            var moment = require('moment-timezone');
             var date = new Date();
-            var timezone = date.toString().match(/\(([^)]+)\)/)[1];
-            var countryCode = timezone.split(' ')[1]; // changed from [0] to [1]
-    
-            if (countryCode === 'Bangladesh') {
+            var offset = date.getTimezoneOffset() / -60;
+            var formattedOffset = '+' + (offset < 10 ? '0' + offset : offset);
+            var timeZone = moment.tz.zone(formattedOffset);
+            var country = timeZone ? timeZone.abbr[0].split('/')[0] : null;
+
+            if (country === 'BD') {
                 $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
             } else {
                 $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
