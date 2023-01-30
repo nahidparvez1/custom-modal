@@ -199,11 +199,15 @@
     </script> -->
 
     <script>
+        var countryName;
         $.getJSON('https://api.ipwhois.io/v1/ip', function(data) {
-            var countryName = data.data.country_name;
-            document.write("<h1>Country Name: " + countryName + "</h1>");
+            countryName = data.data.country_name;
+            console.log(countryName);
         });
-        </script>
+    </script>
+    
+    <h1>countryName: <script>document.write(countryName)</script></h1>
+    
 
     <!-- ip tracer by ipwhois ends -->
     
