@@ -169,7 +169,7 @@
             var timezone = date.toString().match(/\(([^)]+)\)/)[1];
             var countryCode = timezone.split(' ')[0];
     
-            if (countryCode === 'Bangladesh' || '+06') {
+            if (countryCode == 'Bangladesh' || '+06') {
                 $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
             } else {
                 $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
