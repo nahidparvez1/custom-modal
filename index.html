@@ -31,10 +31,28 @@
     .invest-btn.show{
         opacity: 1;
     }
+
+    button.close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+    @media (max-width: 767px) {
+    .modal-dialog {
+        max-width: 10%;
+        max-height: 10%;
+    }
+    }
+    
+      
     
   </style>
 
 </head>
+
+
+
 <body>
 
     <h1>PraniSheba Jouthokhamar</h1>
@@ -45,7 +63,7 @@
         <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <a href="/sharedfarm/#farms">
-                    <div class="modal-body img-fluid fade-hover" style="background-image: url('img/eid_campaign_2023_bd.png');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
+                    <div class="modal-body img-fluid" style="background-image: url('img/eid_campaign_2023_bd.png');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -64,7 +82,7 @@
         <div class="campaign-modal modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <a href="/sharedfarm/#farms">
-                    <div class="modal-body img-fluid fade-hover" style="background-image: url('img/eid_campaign_2023_malaysia.jpg');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
+                    <div class="modal-body img-fluid" style="background-image: url('img/eid_campaign_2023_malaysia.jpg');background-size: 100% 100%; height: 600px; width: 800px; background-repeat: no-repeat; background-position: center;" >
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -91,7 +109,7 @@
 
 
 
-    <script>
+    <!-- <script>
         // Get the user's GeoIP
         $.getJSON('https://ipinfo.io', function(data) {
           var countryCode = data.country;
@@ -102,12 +120,12 @@
             $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
           }
         });
-    </script>
+    </script> -->
 
     <!-- <script>
         // Get the user's GeoIP
         
-          var countryCode = 'BD';
+          var countryCode = 'BDC';
           // Check the user's country code and show the corresponding modal
           if (countryCode === 'BD') {
             $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
@@ -140,6 +158,28 @@
             });
         });
     </script>
+
+    <!-- Joratali System  -->
+
+    <script>
+        var date = new Date();
+        var timezone = date.toString().match(/\(([^)]+)\)/)[1];
+        var country = timezone.split(' ')[0];
+      </script>
+
+    <script>
+        $(function(){
+            var countryCode = document.write(country);
+    
+            if (countryCode === 'Bangladesh') {
+                $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
+            } else {
+                $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
+            }
+        });
+    </script>
+
+<!-- <script>document.write(country)</script> -->
     
       
 
