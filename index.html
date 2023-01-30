@@ -161,15 +161,12 @@
 
     <!-- Joratali System  -->
 
-    <script>
-        
-      </script>
-
+    
     <script>
         $(function(){
             var date = new Date();
             var timezone = date.toString().match(/\(([^)]+)\)/)[1];
-            var countryCode = timezone.split(' ')[0];
+            var countryCode = timezone.split(' ')[1]; // changed from [0] to [1]
     
             if (countryCode === 'Bangladesh') {
                 $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
@@ -178,10 +175,6 @@
             }
         });
     </script>
-
-<!-- <script>document.write(country)</script> -->
     
-      
-
 </body>
 </html>
