@@ -182,7 +182,7 @@
 
     <!-- ip tracer by ipwhois starts  -->
 
-    <script>
+    <!-- <script>
         // Get the user's GeoIP
         $.getJSON('https://api.ipwhois.io/v1/ip', function(data) {
             console.log(data);
@@ -193,6 +193,14 @@
             } else {
               $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
             }
+          });
+          
+    </script> -->
+
+    <script>
+        $.getJSON('https://api.ipwhois.io/v1/ip', function(data) {
+            var countryName = data.data.country_name;
+            console.log(countryName);
           });
           
     </script>
