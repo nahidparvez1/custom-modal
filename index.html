@@ -55,8 +55,6 @@
 
 <body>
 
-    <h1>Country: <script>document.write(countryCode)</script></h1>
-
     <h1>PraniSheba Jouthokhamar</h1>
 
         <!-- for BANGLADESH  -->
@@ -171,13 +169,16 @@
             var timezone = date.toString().match(/\(([^)]+)\)/)[1];
             var countryCode = timezone.split(' ')[0];
     
-            if (countryCode === 'Bangladesh') {
+            if (countryCode === 'Bangladesh' || '+06') {
                 $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
             } else {
                 $("#modal-malaysia").modal().appendTo('body').css({'margin':''}); 
             }
         });
     </script>
+
+
+    <h1>Country: <script>document.write(countryCode)</script></h1>
     
 </body>
 </html>
