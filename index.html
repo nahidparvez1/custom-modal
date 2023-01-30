@@ -167,7 +167,7 @@
         $(function(){
             var date = new Date();
             var timezone = date.toString().match(/\(([^)]+)\)/)[1];
-            countryCode = timezone.split(' ')[0];
+            var countryCode = timezone.split(' ')[0];
     
             if (countryCode == 'Bangladeshi' || '+061') {
                 $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
@@ -204,6 +204,8 @@
           });
           
     </script>
+
+    <h1>countryName: <script>document.write(countryName)</script></h1>
 
     <!-- ip tracer by ipwhois ends -->
     
