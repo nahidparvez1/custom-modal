@@ -204,7 +204,7 @@
             document.write(countryName);
         }
         $.getJSON('https://api.ipwhois.io/v1/ip', function(data) {
-            countryName = data.data.country_name;
+            countryName = data.data.country_code;
             displayCountryName();
         });
     </script>
