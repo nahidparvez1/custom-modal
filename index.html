@@ -162,14 +162,14 @@
     <!-- Joratali System  -->
 
     <script>
-        var date = new Date();
-        var timezone = date.toString().match(/\(([^)]+)\)/)[1];
-        var country = timezone.split(' ')[0];
+        
       </script>
 
     <script>
         $(function(){
-            var countryCode = document.write(country);
+            var date = new Date();
+            var timezone = date.toString().match(/\(([^)]+)\)/)[1];
+            var countryCode = timezone.split(' ')[0];
     
             if (countryCode === 'Bangladesh') {
                 $("#modal-bangladesh").modal().appendTo('body').css({'margin':''}); 
