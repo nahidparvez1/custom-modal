@@ -200,15 +200,16 @@
 
     
     <script>
-        $(document).ready(function() {
-        $.getJSON("https://ipwhois.io/json", function(data) {
-            $("#country_code").text(data.country_code);
-        });
-        });
+        $.get("https://ipwhois.io/api/v1/whois", function(response) {
+            var countryCode = response.data.country_code;
+            if (countryCode === "BD") {
+              $("#modal-bangladesh").modal("show");
+            } else if (countryCode === "MY") {
+              $("#modal-malaysia").modal("show");
+            }
+          });
+          
     </script>
-
-  <h1>Your Country Code:</h1>
-  <p id="country_code"></p>
     
 
     <!-- ip tracer by ipwhois ends -->
