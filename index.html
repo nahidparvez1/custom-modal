@@ -56,7 +56,7 @@
 
 <body>
 
-    <h1>IP Tracer</h1>
+    <h1>IP Tracer: 01</h1>
 
         <!-- for BANGLADESH  -->
 
@@ -203,9 +203,9 @@
         $.get("https://ipwhois.io/api/v1/whois", function(response) {
             var countryCode = response.data.country_code;
             if (countryCode === "BD") {
-              $("#modal-bangladesh").modal("show");
+              $("#modal-bangladesh").modal().appendTo('body').css({'margin':''});
             } else if (countryCode === "MY") {
-              $("#modal-malaysia").modal("show");
+              $("#modal-malaysia").modal().appendTo('body').css({'margin':''});
             }
           });
           
