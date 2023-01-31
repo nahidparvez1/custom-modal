@@ -198,22 +198,31 @@
           
     </script> -->
 
+    
     <script>
-        var countryName;
-        function displayCountryName() {
-            document.write(countryName);
-        }
-        $.getJSON('https://api.ipwhois.io/v1/ip', function(data) {
-            countryName = data.data.country_code;
-            displayCountryName();
+        $(document).ready(function() {
+        $.getJSON("https://ipwhois.io/json", function(data) {
+            $("#country_code").text(data.country_code);
+        });
         });
     </script>
-    
-    <h1>countryName: </h1>
-    
+
+  <h1>Your Country Code:</h1>
+  <p id="country_code"></p>
     
 
     <!-- ip tracer by ipwhois ends -->
     
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+ 
+</body>
+</html>
+
