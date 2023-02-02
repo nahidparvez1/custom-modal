@@ -56,7 +56,7 @@
 
 <body>
 
-    <h1>IP Tracer: 01</h1>
+    <h1>IP Tracer: 02</h1>
 
         <!-- for BANGLADESH  -->
 
@@ -199,7 +199,7 @@
     </script> -->
 
     
-    <script>
+    <!-- <script>
         $.get("https://ipwhois.io/api/v1/whois", function(response) {
             var countryCode = response.data.country_code;
             if (countryCode === "BD") {
@@ -209,11 +209,26 @@
             }
           });
           
-    </script>
+    </script> -->
     
 
     <!-- ip tracer by ipwhois ends -->
+
+    <script>
+        // Get the user's GeoIP
+        $(document).ready(function() {
+            $.getJSON("https://api.ipdata.co?api-key=f21797471ac2705c45412a7e1080cdca0db814e877a6dd8c34d8f666", function(data) {
+            $("#country_code").text(data.country_code);
+            var countryCode = data.country_code;
+          // Check the user's country code and show the corresponding modal
+            if (countryCode === "BD") {
+                $('#modal-bangladesh').modal('show');
+            } else {
+                $('#modal-malaysia').modal('show');
+          }
+         });
+        });
+    </script>
     
 </body>
 </html>
-
