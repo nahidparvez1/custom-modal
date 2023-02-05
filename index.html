@@ -230,7 +230,7 @@
         });
     </script> -->
 
-    <script>
+    <!-- <script>
         try {
             $.getJSON("https://api.ipdata.co?api-key=f21797471ac2705c45412a7e1080cdca0db814e877a6dd8c34d8f666", function(data) {
               var countryCode = data.country_code;
@@ -244,6 +244,21 @@
             console.error(error);
             $('#modal-malaysia').modal().appendTo('body').css({'margin':''}); 
           }
+          
+    </script> -->
+
+    <script>
+        $.getJSON("https://api.ipdata.co?api-key=f21797471ac2705c45412a7e1080cdca0db814e877a6dd8c34d8f666", function(data) {
+            var countryCode = data.country_code;
+            if (countryCode === "BD") {
+              $('#modal-bangladesh').modal().appendTo('body').css({'margin':''}); 
+            } else {
+              $('#modal-malaysia').modal().appendTo('body').css({'margin':''}); 
+            }
+          }).fail(function() {
+            console.error("Request to IP geolocation API failed");
+            $('#modal-malaysia').modal().appendTo('body').css({'margin':''}); 
+          });
           
     </script>
     
